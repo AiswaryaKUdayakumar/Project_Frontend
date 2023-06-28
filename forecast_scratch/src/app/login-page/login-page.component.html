@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="login-page.component.css">
+
+
+
+<!-- <body> -->
+
+<div class="wrapper">
+
+  <!-- <app-navbar></app-navbar> -->
+
+  <div class="container main">
+
+    <div class="col-md-6 right">
+      <div class="input-box">
+
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+          <header style="font-size: large;">Login</header>
+          <div class="input-field">
+            <input type="text" class="form-control input" id="username" formControlName="username" required
+              autocomplete="off" placeholder="Username">
+           
+          </div>
+          <div class="input-field">
+            <input type="password" class="form-control input" id="password" formControlName="password" required
+            autocomplete="off" placeholder="Password">
+         
+          </div>
+          <div class="input-field">
+            <input type="submit" class="submit" value="Login">
+          </div>
+
+          <div class="signin">
+            <span>Don't have an account? <a href="#" routerLink="/signup">Sign up</a></span>
+            <!-- <a href="#">forgot password</a>  -->
+          </div>
+
+
+        </form>
+        <!-- form ends -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- </body>-->

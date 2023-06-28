@@ -1,0 +1,45 @@
+<!-- <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
+<div class="container-fluid">
+  <!-- <app-navbar></app-navbar> -->
+
+  <div class="container">
+
+    <div class="fav">
+      <h1><i class="fas fa-star" style="padding: 1rem;"></i>Favorites</h1>
+    </div>
+
+    <div class="listbox">
+
+      <ul class="list-group" *ngFor="let favorite of getFavoriteLocations()">
+        <li class="list-group-item d-flex justify-content-center align-items-center">
+          {{favorite.cityName}}
+          <div class="btn">
+
+            <span class="btn btn-outline-dark m-1 rounded-pill"
+              aria-expanded="false" aria-controls="collapseWidthExample" (click)="viewFav(favorite)">View</span>
+
+            <span class="btn btn-outline-dark m-1 rounded-pill" (click)="deleteFav(favorite)">Delete</span>
+
+          </div>
+        </li>
+      </ul>
+
+
+     
+            <div *ngIf="climate">
+              <!-- Display weather information here -->
+              <h2>{{ climate.location.name }}</h2>
+              <p>Temperature: {{ climate.current.temp_c }}°C</p>
+              <p>Condition: {{ climate.current.condition.text }}</p>
+              <p>Wind: {{climate.current.wind_kph}}km/h</p>
+              <p>Rain: {{climate.forecast.forecastday[0].day.daily_chance_of_rain}}mm</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
